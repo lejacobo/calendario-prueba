@@ -1,3 +1,6 @@
 $( document ).ready(function() {
-	$('#main-calendar').fullCalendar();
+
+	$('#main-calendar').fullCalendar({
+		events: '/events.json'
+	});
 });
