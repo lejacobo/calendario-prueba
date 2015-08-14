@@ -1,16 +1,20 @@
-json.array!(@events) do |event|
-  json.extract! event, :id, :title, :description
-  json.start event.start_time
-  json.end event.end_time
-  json.url event_url(event, format: :html)
-end
-
-
 # json.array!(@events) do |event|
-# json.extract! event, :id, :title
-# json.backgroundColor event.setting_event_type.color
-# json.borderColor event.setting_event_type.color
-# json.start event.due_date
-# json.allDay true
-# json.url task_url(event)
+#   json.extract! event, :id, :title, :description
+#   json.start event.start_time
+#   json.end event.end_time
+#   json.url event_url(event, format: :html)
 # end
+
+
+json.array!(@events) do |event|
+json.extract! event, :id, :title, :description
+if event.start_time < DateTime.now
+	json.start event.start_time
+	json.backgroundColor 'red'
+else
+	json.start event.start_time
+	json.backgroundColor 'blue'
+end
+json.end event.end_time
+json.url event_url(event, format: :html)
+end
