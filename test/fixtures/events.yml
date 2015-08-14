@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  desciption: MyString
+  description: MyString
   start_time: 2015-08-14 19:05:27
   end_time: 2015-08-14 19:05:27
 
 two:
   title: MyString
-  desciption: MyString
+  description: MyString
   start_time: 2015-08-14 19:05:27
   end_time: 2015-08-14 19:05:27
